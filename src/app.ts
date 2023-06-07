@@ -1,5 +1,7 @@
 import cors from 'cors';
 import express, { Application, Request, Response } from 'express';
+import globalErrorHandler from './app/middleWares/globalErrorHandler';
+import routes from './app/routes';
 
 const app: Application = express();
 
@@ -13,5 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
+
+// Application Routes
+app.use('/api/v1/', routes);
+
+// Error Handling
+app.use(globalErrorHandler);
 
 export default app;
