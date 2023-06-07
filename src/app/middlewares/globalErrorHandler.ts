@@ -22,6 +22,7 @@ const globalErrorHandler: ErrorRequestHandler = (
   let statusCode = 500;
   let message = 'Something went wrong !';
   let errorMessages: IGenericErrorMessage[] = [];
+
   // Validation Error
   if (error?.name === 'ValidationError') {
     const simplifiedError = handleValidationError(error);
@@ -37,6 +38,7 @@ const globalErrorHandler: ErrorRequestHandler = (
     message = simplifiedError.message;
     errorMessages = simplifiedError.errorMessages;
   }
+
   // Api Error
   else if (error instanceof ApiError) {
     statusCode = error?.statusCode;
@@ -50,6 +52,7 @@ const globalErrorHandler: ErrorRequestHandler = (
         ]
       : [];
   }
+
   // Regular Error
   else if (error instanceof Error) {
     message = error?.message;
