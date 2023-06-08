@@ -29,3 +29,19 @@ export const insuranceMonths: IInsuranceMonths[] = [
   'November',
   'December',
 ];
+
+export const insuranceCodeMapper: {
+  [key: string]: string;
+} = {
+  b101: `Basic Health Insurance`,
+  p202: `Premium Health Insurance`,
+  p333: `Platinum Health Insurance`,
+};
+
+export const insurancePriceMapper: {
+  [key: string]: number;
+} = {
+  b101: 100,
+  p202: 200,
+  p333: 300,
+};

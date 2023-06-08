@@ -27,8 +27,10 @@ export interface IInsurance {
   title: IInsuranceTiles;
   code: IInsuranceCodes;
   price: IInsurancePrices;
-  startMonths: IInsuranceMonths;
-  endMonths: IInsuranceMonths;
+  startMonth: IInsuranceMonths;
+  startYear: number;
+  // endingTime: [IInsuranceMonths, number];
+  endingTime: string;
 }
 
 export type InsuranceModel = Model<IInsurance, object>;

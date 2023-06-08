@@ -20,9 +20,6 @@ const createInsuranceZodSchema = z.object({
     startMonth: z.enum([...insuranceMonths] as [string, ...string[]], {
       required_error: `Start Month is required`,
     }),
-    endMonth: z.enum([...insuranceMonths] as [string, ...string[]], {
-      required_error: `End Month is required`,
-    }),
   }),
 });
 

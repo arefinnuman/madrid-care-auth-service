@@ -25,16 +25,26 @@ const insuranceSchema = new Schema<IInsurance>(
       enum: insurancePrices,
     },
 
-    startMonths: {
+    startMonth: {
       type: String,
       required: true,
       enum: insuranceMonths,
     },
-    endMonths: {
+    startYear: {
+      type: Number,
+      required: true,
+    },
+
+    endingTime: {
       type: String,
       required: true,
-      enum: insuranceMonths,
     },
+
+    // endMonth: {
+    //   type: String,
+    //   required: true,
+    //   enum: insuranceMonths,
+    // },
   },
   {
     timestamps: true,

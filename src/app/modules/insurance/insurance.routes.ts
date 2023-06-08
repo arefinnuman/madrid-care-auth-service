@@ -11,4 +11,4 @@ router.post(
   InsuranceController.createInsurance
 );
 
-export const UserRoutes = router;
+export const InsuranceRoutes = router;
