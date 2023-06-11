@@ -45,3 +45,7 @@ export const insurancePriceMapper: {
   p202: 200,
   p333: 300,
 };
+
+export const insuranceSearchFields = ['title', 'code', 'year'];
+
+export const insuranceFilterAbleField = ['searchTerm', 'title', 'code', 'year'];

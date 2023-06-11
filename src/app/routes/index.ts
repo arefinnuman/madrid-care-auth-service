@@ -10,7 +10,7 @@ const moduleRoutes = [
     route: UserRoutes,
   },
   {
-    path: '/insurance',
+    path: '/insurances',
     route: InsuranceRoutes,
   },
 ];

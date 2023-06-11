@@ -23,7 +23,7 @@ export type IInsuranceMonths =
   | 'November'
   | 'December';
 
-export interface IInsurance {
+export type IInsurance = {
   title: IInsuranceTiles;
   code: IInsuranceCodes;
   price: IInsurancePrices;
@@ -31,6 +31,10 @@ export interface IInsurance {
   startYear: number;
   // endingTime: [IInsuranceMonths, number];
   endingTime: string;
-}
+};
 
 export type InsuranceModel = Model<IInsurance, object>;
+
+export type IInsuranceFilters = {
+  searchTerm: string;
+};

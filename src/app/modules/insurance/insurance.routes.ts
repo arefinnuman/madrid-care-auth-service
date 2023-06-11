@@ -11,4 +11,16 @@ router.post(
   InsuranceController.createInsurance
 );
 
+router.get('/:id', InsuranceController.getAnInsurance);
+
+router.patch(
+  '/:id',
+  validateRequest(InsuranceValidation.updateInsuranceZodSchema),
+  InsuranceController.updateInsurance
+);
+
+router.delete('/:id', InsuranceController.deleteInsurance);
+
+router.get('/', InsuranceController.getAllInsurance);
+
 export const InsuranceRoutes = router;
