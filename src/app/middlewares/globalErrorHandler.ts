@@ -4,6 +4,7 @@ import { Error } from 'mongoose';
 import { ZodError } from 'zod';
 import config from '../../config';
 import ApiError from '../../errors/apiError';
+import handleCastError from '../../errors/castError';
 import handleValidationError from '../../errors/validationError';
 import handleZodError from '../../errors/zodError';
 import { IGenericErrorMessage } from '../../interfaces/IGenericErrorMessage';
@@ -34,6 +35,14 @@ const globalErrorHandler: ErrorRequestHandler = (
   // Zod Error
   else if (error instanceof ZodError) {
     const simplifiedError = handleZodError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessages;
+  }
+
+  //  Cast Error
+  else if (error?.name === 'CastError') {
+    const simplifiedError = handleCastError(error);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
     errorMessages = simplifiedError.errorMessages;
